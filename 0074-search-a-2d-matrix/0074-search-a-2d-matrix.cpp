@@ -8,7 +8,7 @@ public:
         int high=(n*m)-1;
         int mid;
         while(low<=high){
-            mid=(low +(high-low)/2);
+            mid=(low +high)/2;
             if(matrix[mid/m][mid%m]==target){
                 return true;
             }
