@@ -32,7 +32,7 @@ public:
             if(nums[i]==eval1){
                 ct1++;
             }
-            if(nums[i]==eval2){
+            else if(nums[i]==eval2){
                 ct2++;
             }
         }
