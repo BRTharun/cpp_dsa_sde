@@ -7,14 +7,14 @@ public:
         while(nn){
             if(nn%2){
                 ans=ans*x;
-                nn-=1;
+                nn=nn-1;
             }
             else{
                 x=x*x;
-                nn/=2;
+                nn=nn/2;
             }
         }
-        if(n<0)ans=double(1.0)/double(ans);
+        if(n<0) ans=double(1.0)/double(ans);
         return ans;
     }
 };
