@@ -2,47 +2,34 @@ class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
         int n=nums.size();
-        int count1=0,count2=0;
-        int eval1=INT_MIN,eval2=INT_MIN;
+        int c1=0,c2=0;
+        int e1=INT_MIN;
+        int e2=INT_MIN;
         for(int i=0;i<n;i++){
-            if(count1==0 && nums[i]!=eval2){
-                count1=1;
-                eval1=nums[i];
-                
+            if(c1==0 && nums[i]!=e2){
+                e1=nums[i];
+                c1=1;
             }
-            else if(count2==0 && nums[i]!=eval1){
-                count2=1;
-                eval2=nums[i];
-                
+            else if(c2==0 && nums[i]!=e1){
+                e2=nums[i];
+                c2=1;
             }
-            else if(eval1==nums[i]){
-                count1++;
-            }
-            else if(eval2==nums[i]){
-                count2++;
-            }
+            else if(nums[i]==e1) c1++;
+            else if(nums[i]==e2) c2++;
             else{
-                count1--;
-                count2--;
+                c1--,c2--;
             }
         }
-        vector<int> ls;
-        int ct1=0,ct2=0;
+        vector<int> l;
+        int c11=0,c22=0;
         for(int i=0;i<n;i++){
-            if(nums[i]==eval1){
-                ct1++;
-            }
-            else if(nums[i]==eval2){
-                ct2++;
-            }
+            if(nums[i]==e1) c11++;
+            if (nums[i]==e2) c22++;
         }
-        int mini =int(n/3)+1;
-        cout<<mini<<endl;
-        cout<<ct1<<" "<<ct2<<endl; 
-        if(ct1>=mini) ls.push_back(eval1);
-        if(ct2>=mini) ls.push_back(eval2);
-        sort(ls.begin(),ls.end());
-        return ls;
-        
+        int mini=(int)(n/3)+1;
+        if(c11>=mini) l.push_back(e1);
+        if(c22>=mini) l.push_back(e2);
+        sort(l.begin(),l.end());
+        return l;
     }
 };
