@@ -12,8 +12,7 @@ public:
                 int l=n-1;
                 while(k<l){
                     long long sum=0;
-                    sum+=nums[i];
-                    sum+=nums[j];
+                    sum+=nums[i]+nums[j];
                     sum+=nums[k];
                     sum+=nums[l];
                     if(sum==target){
