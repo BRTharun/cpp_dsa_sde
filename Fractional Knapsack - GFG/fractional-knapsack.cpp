@@ -39,13 +39,13 @@ class Solution
             }
             else{
                 int rem=W-curWt;
-                fnlVal+=(arr[i].value/(double)arr[i].weight)*(double)rem;
+                fnlVal+=(arr[i].value/(double)arr[i].weight)*rem;
                 break;
             }
         }
         return fnlVal;
     }
-        
+
 };
 
 
