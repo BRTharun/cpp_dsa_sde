@@ -6,7 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    static void func(int idx,int sum,vector<int> &arr, int N,vector <int> &ans){
+    static void func(int idx,int sum,vector<int> arr, int N,vector <int> &ans){
         if(idx==N){
             ans.push_back(sum);
             return;
